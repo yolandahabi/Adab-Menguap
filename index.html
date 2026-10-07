@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MPI Akidah Akhlak Kelas 2 - Adab Menguap</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Fredoka:wght@400;600;700&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'p-green': '#A8E6CF',
+                        'p-green-dark': '#2E7D32',
+                        'p-blue': '#AEDFF7',
+                        'p-blue-dark': '#0288D1',
+                        'p-yellow': '#FFF9C4',
+                        'p-yellow-dark': '#FBC02D',
+                        'p-orange': '#FFD3B6',
+                        'p-pink': '#FFAAA5',
+                    },
+                    fontFamily: {
+                        'fredoka': ['Fredoka', 'sans-serif'],
+                        'nunito': ['Nunito', 'sans-serif'],
+                        'amiri': ['Amiri', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: linear-gradient(135deg, #E8F5E9 0%, #E0F7FA 50%, #FFFDE7 100%);
+            min-height: 100vh;
+            color: #333;
+            user-select: none;
+        }
+
+        h1, h2, h3, h4, .font-heading {
+            font-family: 'Fredoka', cursive;
+        }
+
+        .btn-bounce {
+            transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .btn-bounce:hover {
+            transform: scale(1.05);
+        }
+        .btn-bounce:active {
+            transform: scale(0.95);
+        }
+
+        .card-shadow {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+        }
+
+        .star-pop {
+            animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+
+        @keyframes popIn {
+            0% { transform: scale(0) rotate(-45deg); opacity: 0; }
+            80% { transform: scale(1.2) rotate(10deg); opacity: 1; }
+            100% { transform: scale(1) rotate(0deg); opacity: 1; }
+        }
+
+        .pulse-slow {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #81C784;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4CAF50;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen justify-between overflow-x-hidden">
+
+    <!-- HEADER BAR -->
+    <header class="bg-white/90 backdrop-blur-md border-b-4 border-emerald-400 sticky top-0 z-50 px-4 py-3 shadow-md">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
+            <!-- Title & Institution -->
+            <div class="flex items-center gap-3 text-center md:text-left">
+                <div class="w-12 h-12 bg-emerald-500 rounded-2xl flex items-center justify-center text-white font-bold text-2xl shadow-lg border-2 border-emerald-200">
+                    🌙
+                </div>
+                <div>
+                    <h1 class="text-xl md:text-2xl font-bold text-emerald-800 leading-tight">MPI Akidah Akhlak - Kelas 2 MI</h1>
+                    <p class="text-xs md:text-sm font-semibold text-emerald-600">
+                        Kanwil Kemenag Prov. Gorontalo | <span class="text-amber-600">Sri Yolanda Habi, S.Pd (MIS Al-Falah)</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Navigation Tabs -->
+            <nav class="flex flex-wrap justify-center gap-2">
+                <button onclick="switchTab('beranda')" id="tab-beranda" class="nav-btn bg-emerald-500 text-white px-4 py-2 rounded-xl font-bold text-sm btn-bounce shadow-md flex items-center gap-1">
+                    🏠 <span>Beranda</span>
+                </button>
+                <button onclick="switchTab('materi')" id="tab-materi" class="nav-btn bg-white text-emerald-700 hover:bg-emerald-100 px-4 py-2 rounded-xl font-bold text-sm btn-bounce shadow flex items-center gap-1 border-2 border-emerald-300">
+                    📖 <span>Materi</span>
+                </button>
+                <button onclick="switchTab('simulasi')" id="tab-simulasi" class="nav-btn bg-white text-emerald-700 hover:bg-emerald-100 px-4 py-2 rounded-xl font-bold text-sm btn-bounce shadow flex items-center gap-1 border-2 border-emerald-300">
+                    🎮 <span>Simulasi</span>
+                </button>
+                <button onclick="switchTab('evaluasi')" id="tab-evaluasi" class="nav-btn bg-white text-emerald-700 hover:bg-emerald-100 px-4 py-2 rounded-xl font-bold text-sm btn-bounce shadow flex items-center gap-1 border-2 border-emerald-300">
+                    📝 <span>Evaluasi</span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main class="max-w-6xl mx-auto w-full p-4 md:p-6 flex-grow">
+
+        <!-- SECTION 1: BERANDA / PROFIL -->
+        <section id="sec-beranda" class="tab-content block space-y-6">
+            <!-- Hero Banner -->
+            <div class="bg-gradient-to-r from-emerald-400 via-teal-400 to-sky-400 rounded-3xl p-6 md:p-10 text-white card-shadow relative overflow-hidden flex flex-col md:flex-row items-center gap-6">
+                <div class="space-y-4 md:w-2/3 z-10 text-center md:text-left">
+                    <span class="bg-amber-300 text-amber-900 font-bold px-3 py-1 rounded-full text-xs uppercase tracking-wider">Materi Akidah Akhlak - Fase A</span>
+                    <h2 class="text-3xl md:text-5xl font-extrabold text-white drop-shadow-md">Adab Menguap Menurut Sunnah Nabi</h2>
+                    <p class="text-base md:text-lg text-emerald-50 leading-relaxed">
+                        Mari belajar bersama <b>Ahmad</b> & <b>Aisyah</b>! Mempraktikkan adab menguap adalah wujud rasa cinta kita kepada Allah SWT, Rasulullah SAW, cinta diri sendiri, dan kasih sayang kepada sesama.
+                    </p>
+                    <div class="pt-2 flex flex-wrap justify-center md:justify-start gap-3">
+                        <button onclick="switchTab('materi')" class="bg-amber-400 hover:bg-amber-300 text-amber-950 font-bold px-6 py-3 rounded-2xl text-lg shadow-lg btn-bounce flex items-center gap-2">
+                            🚀 Mulai Belajar Materi
+                        </button>
+                        <button onclick="switchTab('simulasi')" class="bg-white hover:bg-emerald-50 text-emerald-800 font-bold px-6 py-3 rounded-2xl text-lg shadow-lg btn-bounce flex items-center gap-2">
+                            🎯 Coba Simulasi
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Mascot Visual SVG -->
+                <div class="md:w-1/3 flex justify-center z-10">
+                    <div class="w-48 h-48 md:w-60 md:h-60 bg-white/30 backdrop-blur-md rounded-full p-4 flex items-center justify-center border-4 border-white/50 shadow-inner">
+                        <svg viewBox="0 0 200 200" class="w-full h-full drop-shadow-md">
+                            <!-- Character Boy (Ahmad) -->
+                            <circle cx="100" cy="100" r="90" fill="#E0F2FE" />
+                            <!-- Kopyah / Songkok -->
+                            <rect x="65" y="30" width="70" height="35" rx="5" fill="#1E293B" />
+                            <!-- Face -->
+                            <ellipse cx="100" cy="105" rx="45" ry="45" fill="#FDE047" />
+                            <!-- Eyes -->
+                            <circle cx="85" cy="100" r="6" fill="#0F172A" />
+                            <circle cx="115" cy="100" r="6" fill="#0F172A" />
+                            <!-- Smile -->
+                            <path d="M 85 125 Q 100 140 115 125" fill="none" stroke="#0F172A" stroke-width="4" stroke-linecap="round" />
+                            <!-- Cheeks -->
+                            <circle cx="75" cy="112" r="6" fill="#F43F5E" opacity="0.4" />
+                            <circle cx="125" cy="112" r="6" fill="#F43F5E" opacity="0.4" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile & Pedagogical Target Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Card 1: Tujuan Pembelajaran -->
+                <div class="bg-white p-6 rounded-3xl border-2 border-emerald-200 card-shadow space-y-3">
+                    <div class="w-12 h-12 bg-emerald-100 rounded-2xl flex items-center justify-center text-emerald-700 text-2xl font-bold">
+                        🎯
+                    </div>
+                    <h3 class="text-xl font-bold text-emerald-800">Tujuan Pembelajaran</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Siswa mampu menjelaskan pengertian & tata cara adab menguap dengan benar sebagai wujud cinta Allah, Rasul-Nya, cinta diri sendiri, dan menghormati sesama manusia.
+                    </p>
+                </div>
+
+                <!-- Card 2: Profil Penyusun -->
+                <div class="bg-white p-6 rounded-3xl border-2 border-amber-200 card-shadow space-y-3">
+                    <div class="w-12 h-12 bg-amber-100 rounded-2xl flex items-center justify-center text-amber-700 text-2xl font-bold">
+                        👩‍🏫
+                    </div>
+                    <h3 class="text-xl font-bold text-amber-800">Pengembang Media</h3>
+                    <ul class="text-gray-600 text-sm space-y-1">
+                        <li><b>Nama:</b> Sri Yolanda Habi, S.Pd</li>
+                        <li><b>Instansi:</b> MIS Al-Falah</li>
+                        <li><b>Wilayah:</b> Kanwil Kemenag Prov. Gorontalo</li>
+                        <li><b>Fase / Kelas:</b> Fase A / Kelas 2 MI</li>
+                    </ul>
+                </div>
+
+                <!-- Card 3: Fitur Pembelajaran -->
+                <div class="bg-white p-6 rounded-3xl border-2 border-sky-200 card-shadow space-y-3">
+                    <div class="w-12 h-12 bg-sky-100 rounded-2xl flex items-center justify-center text-sky-700 text-2xl font-bold">
+                        ⭐
+                    </div>
+                    <h3 class="text-xl font-bold text-sky-800">Fitur Pembelajaran</h3>
+                    <ul class="text-gray-600 text-sm space-y-1">
+                        <li>✅ Slide Ringkasan Ber-Audio Narasi</li>
+                        <li>✅ Simulasi Interaktif Praktik Menguap</li>
+                        <li>✅ Evaluasi Kuis 10 Soal (4 Variasi)</li>
+                        <li>✅ Integrasi Database Google Sheets Backend</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: MATERI INTERAKTIF -->
+        <section id="sec-materi" class="tab-content hidden space-y-6">
+            <div class="bg-white rounded-3xl border-2 border-emerald-300 card-shadow p-6 md:p-8">
+                
+                <!-- Slide Header & Controls -->
+                <div class="flex flex-col md:flex-row justify-between items-center pb-4 border-b-2 border-gray-100 gap-4">
+                    <div>
+                        <span class="text-xs font-bold bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full">Modul Materi Interaktif</span>
+                        <h2 id="slide-title" class="text-2xl md:text-3xl font-bold text-emerald-800 mt-1">1. Apa Itu Menguap?</h2>
+                    </div>
+
+                    <div class="flex items-center gap-2">
+                        <button onclick="playTTSNarrative()" class="bg-sky-500 hover:bg-sky-600 text-white font-bold px-4 py-2 rounded-xl text-sm btn-bounce flex items-center gap-2 shadow">
+                            🔊 <span>Dengarkan Suara</span>
+                        </button>
+                        <span id="slide-counter" class="text-sm font-bold text-gray-500 bg-gray-100 px-3 py-2 rounded-xl">Slide 1 / 5</span>
+                    </div>
+                </div>
+
+                <!-- Dynamic Slide Content Container -->
+                <div id="slide-body" class="py-6 min-h-[340px] flex flex-col justify-center">
+                    <!-- Dynamic content loaded via JavaScript -->
+                </div>
+
+                <!-- Slide Navigation Controls -->
+                <div class="flex justify-between items-center pt-4 border-t-2 border-gray-100">
+                    <button onclick="prevSlide()" id="btn-prev-slide" class="bg-gray-200 text-gray-700 hover:bg-gray-300 px-5 py-3 rounded-2xl font-bold btn-bounce disabled:opacity-40 disabled:cursor-not-allowed">
+                        ⬅️ Sebelumnya
+                    </button>
+                    
+                    <div class="flex gap-2" id="slide-dots">
+                        <!-- Dots rendered by JS -->
+                    </div>
+
+                    <button onclick="nextSlide()" id="btn-next-slide" class="bg-emerald-500 text-white hover:bg-emerald-600 px-5 py-3 rounded-2xl font-bold btn-bounce shadow-md">
+                        Selanjutnya ➡️
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: SIMULASI INTERAKTIF -->
+        <section id="sec-simulasi" class="tab-content hidden space-y-6">
+            <div class="bg-white rounded-3xl border-2 border-sky-300 card-shadow p-6 md:p-8 text-center space-y-6">
+                <div>
+                    <span class="bg-sky-100 text-sky-800 font-bold px-3 py-1 rounded-full text-xs uppercase">Simulasi Praktik Langsung</span>
+                    <h2 class="text-3xl font-bold text-sky-900 mt-2">Bantu Ahmad Praktik Adab Menguap!</h2>
+                    <p class="text-gray-600 text-sm max-w-xl mx-auto mt-1">
+                        Ahmad sedang merasa ngantuk dan mulai menguap saat di kelas. Bantu Ahmad melakukan 4 langkah adab menguap yang benar!
+                    </p>
+                </div>
+
+                <!-- Simulation Interactive Play Area -->
+                <div class="bg-sky-50 rounded-2xl p-6 border-2 border-sky-200 max-w-2xl mx-auto relative min-h-[380px] flex flex-col items-center justify-between">
+                    
+                    <!-- Sim Stage Progress -->
+                    <div class="w-full bg-white rounded-full h-4 overflow-hidden border border-sky-200">
+                        <div id="sim-progress" class="bg-emerald-400 h-full w-1/4 transition-all duration-500"></div>
+                    </div>
+
+                    <!-- Sim Stage Character Display -->
+                    <div class="my-4 relative flex flex-col items-center">
+                        <div id="sim-character" class="w-44 h-44 relative flex items-center justify-center transition-all duration-300">
+                            <!-- Dynamic SVG character state -->
+                        </div>
+                        <p id="sim-dialogue" class="bg-white border-2 border-amber-300 font-bold text-gray-800 px-4 py-2 rounded-2xl mt-3 shadow-md max-w-md text-sm">
+                            "Aduh... mataku berat sekali, hoaammm!"
+                        </p>
+                    </div>
+
+                    <!-- Sim Action Controls Container -->
+                    <div id="sim-controls" class="w-full space-y-3">
+                        <!-- Dynamic choices generated by JS -->
+                    </div>
+                </div>
+
+                <!-- Simulation Reset/Finish Notice -->
+                <div id="sim-feedback" class="hidden bg-emerald-100 border-2 border-emerald-400 p-4 rounded-2xl text-emerald-900 font-bold">
+                    🎉 Masya Allah! Kamu berhasil memandu Ahmad mempraktikkan seluruh Adab Menguap dengan sempurna!
+                    <button onclick="resetSimulation()" class="block mx-auto mt-2 bg-emerald-600 text-white px-4 py-2 rounded-xl text-sm font-bold btn-bounce shadow">
+                        🔄 Coba Simulasi Lagi
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: EVALUASI INTERAKTIF -->
+        <section id="sec-evaluasi" class="tab-content hidden space-y-6">
+            <div class="bg-white rounded-3xl border-2 border-amber-300 card-shadow p-6 md:p-8 space-y-6">
+                
+                <!-- Quiz Form Identity Header -->
+                <div id="quiz-intro" class="text-center space-y-4 max-w-lg mx-auto">
+                    <div class="w-16 h-16 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center mx-auto text-3xl font-bold">
+                        ✍️
+                    </div>
+                    <h2 class="text-3xl font-bold text-amber-900">Kuis Formatif Adab Menguap</h2>
+                    <p class="text-gray-600 text-sm">
+                        Isi nama dan kelasmu terlebih dahulu sebelum memulai 10 butir soal evaluasi interaktif.
+                    </p>
+
+                    <div class="space-y-3 text-left bg-amber-50 p-5 rounded-2xl border border-amber-200">
+                        <div>
+                            <label class="block text-xs font-bold text-amber-800 mb-1">Nama Lengkap Siswa:</label>
+                            <input type="text" id="student-name" placeholder="Contoh: Ahmad Raihan" class="w-full px-4 py-3 rounded-xl border-2 border-amber-300 focus:outline-none focus:border-amber-500 font-bold text-gray-800">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-amber-800 mb-1">Kelas / Rombel:</label>
+                            <select id="student-class" class="w-full px-4 py-3 rounded-xl border-2 border-amber-300 focus:outline-none focus:border-amber-500 font-bold text-gray-800">
+                                <option value="2 A">Kelas 2 A</option>
+                                <option value="2 B">Kelas 2 B</option>
+                                <option value="2 C">Kelas 2 C</option>
+                            </select>
+                        </div>
+                        <button onclick="startQuiz()" class="w-full bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 rounded-xl text-lg shadow-md btn-bounce mt-2">
+                            ▶️ Mulai Kuis Evaluasi
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Active Quiz Playing Container -->
+                <div id="quiz-container" class="hidden space-y-6">
+                    <!-- Quiz Progress Header -->
+                    <div class="flex justify-between items-center border-b-2 border-gray-100 pb-4">
+                        <div>
+                            <span id="quiz-user-info" class="text-xs font-bold text-emerald-700 bg-emerald-100 px-3 py-1 rounded-full">Siswa: -</span>
+                            <h3 id="quiz-question-number" class="text-xl font-bold text-gray-800 mt-1">Soal 1 dari 10</h3>
+                        </div>
+                        <div class="text-right">
+                            <span id="quiz-type-badge" class="text-xs font-bold bg-amber-100 text-amber-800 px-3 py-1 rounded-full">Pilihan Ganda</span>
+                        </div>
+                    </div>
+
+                    <!-- Question Body -->
+                    <div id="quiz-question-body" class="space-y-4">
+                        <!-- Dynamic Question HTML -->
+                    </div>
+
+                    <!-- Question Navigation & Feedback -->
+                    <div id="quiz-explanation-box" class="hidden p-4 rounded-2xl border-2 text-sm leading-relaxed">
+                        <!-- Feedback explanation -->
+                    </div>
+
+                    <div class="flex justify-between items-center pt-4 border-t-2 border-gray-100">
+                        <button onclick="checkAnswer()" id="btn-check-ans" class="bg-sky-500 hover:bg-sky-600 text-white px-6 py-3 rounded-xl font-bold btn-bounce shadow">
+                            ✔️ Periksa Jawaban
+                        </button>
+                        <button onclick="nextQuestion()" id="btn-next-q" class="hidden bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-3 rounded-xl font-bold btn-bounce shadow">
+                            Lanjut Soal ➡️
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Quiz Summary Result View -->
+                <div id="quiz-result" class="hidden text-center space-y-6 py-6">
+                    <div class="w-24 h-24 bg-amber-100 rounded-full flex items-center justify-center mx-auto text-5xl star-pop">
+                        🏆
+                    </div>
+                    <div>
+                        <h2 class="text-3xl font-bold text-emerald-800">Hasil Evaluasi Belajar</h2>
+                        <p id="result-student-name" class="text-gray-600 font-bold">Nama: - | Kelas: -</p>
+                    </div>
+
+                    <!-- Database Sync Indicator Status -->
+                    <div id="db-sync-status" class="text-xs font-bold bg-amber-50 p-3 rounded-xl border border-amber-200 inline-block mx-auto">
+                        ⏳ <span class="text-amber-700">Menyimpan data hasil kuis ke database guru...</span>
+                    </div>
+
+                    <!-- Score Card -->
+                    <div class="bg-gradient-to-r from-emerald-100 to-teal-100 p-6 rounded-3xl border-2 border-emerald-300 max-w-sm mx-auto shadow-inner">
+                        <span class="text-xs font-bold text-emerald-800 uppercase tracking-widest">Skor Akhir Anda</span>
+                        <div id="final-score" class="text-6xl font-extrabold text-emerald-700 my-2">100</div>
+                        <p id="final-verdict" class="text-sm font-bold text-emerald-900">Masya Allah! Nilai Sempurna!</p>
+                    </div>
+
+                    <!-- Detailed Discussion Table -->
+                    <div class="text-left space-y-3">
+                        <h3 class="text-lg font-bold text-gray-800">📋 Ringkasan Jawaban & Pembahasan:</h3>
+                        <div id="discussion-list" class="space-y-3 max-h-96 overflow-y-auto pr-2">
+                            <!-- Generated discussion list -->
+                        </div>
+                    </div>
+
+                    <button onclick="restartQuiz()" class="bg-amber-500 hover:bg-amber-600 text-white font-bold px-6 py-3 rounded-xl btn-bounce shadow-md">
+                        🔄 Ulangi Kuis Formatif
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-white border-t-2 border-emerald-200 py-4 px-4 text-center text-xs text-gray-600 font-semibold space-y-1">
+        <p>© 2026 Media Pembelajaran Interaktif (MPI) Akidah Akhlak MI Kelas 2</p>
+        <p class="text-emerald-700">Didesain khusus untuk Pembelajaran Offline Madrasah Ibtidaiyah - Kanwil Kemenag Prov. Gorontalo</p>
+    </footer>
+
+    <script>
+        /* -------------------------------------------------------------
+           KONFIGURASI BACKEND GOOGLE APPS SCRIPT DATABASE
+        ------------------------------------------------------------- */
+        const GAS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzME9CiGjJtPkY6M7fIuyzbjjcpiMVEfx26jQVnspDWuuvdUXvhBWjv9tcEyTGZ-gulUw/exec";
+
+        /* -------------------------------------------------------------
+           STATE VARIABLES & SLIDE DATA
+        ------------------------------------------------------------- */
+        let currentSlide = 0;
+        let simStage = 1;
+        let currentQuizIndex = 0;
+        let studentInfo = { name: '', class: '2 A' };
+        let userAnswers = [];
+        let audioCtx = null;
+
+        const slidesData = [
+            {
+                title: "1. Apa Itu Menguap & Mengapa Terjadi?",
+                subtitle: "Pengertian & Hakekat Menguap",
+                speechText: "Menguap adalah hembusan napas refleks saat tubuh lelah atau mengantuk. Dalam Islam, menguap berasal dari rasa malas dan godaan setan.",
+                contentHTML: `
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                        <div class="space-y-4">
+                            <p class="text-gray-700 text-base leading-relaxed">
+                                <b>Menguap</b> terjadi ketika tubuh kita merasa <span class="bg-amber-100 text-amber-800 font-bold px-2 py-0.5 rounded">lelah, lemas, atau mengantuk</span>. Mulut akan refleks terbuka mengambil udara.
+                            </p>
+                            <div class="bg-emerald-50 p-4 rounded-2xl border-l-4 border-emerald-500 shadow-sm space-y-2">
+                                <h4 class="font-bold text-emerald-900 text-sm flex items-center gap-1">
+                                    <span>📜</span> Hadits Rasulullah SAW:
+                                </h4>
+                                <p class="text-right text-xl md:text-2xl font-amiri text-emerald-900 leading-loose py-1" dir="rtl">
+                                    «التَّصَاؤُبُ مِنَ الشَّيْطَانِ، فَإِذَا تَصَاءَبَ أَحَدُكُمْ فَلْيَرُدَّهُ مَا اسْتَطَاعَ»
+                                </p>
+                                <p class="text-xs text-emerald-800 italic font-semibold leading-relaxed border-t border-emerald-200/60 pt-2">
+                                    <b>Artinya:</b> "Menguap itu datangnya dari setan. Maka apabila salah seorang dari kalian menguap, hendaklah ia menahannya sebisanya." (HR. Muslim)
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Vector Mascot Illustration -->
+                        <div class="flex justify-center">
+                            <div class="bg-gradient-to-br from-amber-100 to-sky-100 p-4 rounded-3xl border-2 border-amber-300 text-center space-y-2 shadow-inner w-full max-w-xs">
+                                <svg viewBox="0 0 200 180" class="w-full h-40 drop-shadow-md mx-auto">
+                                    <circle cx="100" cy="90" r="75" fill="#E0F2FE" />
+                                    <rect x="65" y="20" width="70" height="30" rx="6" fill="#1E293B" />
+                                    <ellipse cx="100" cy="95" rx="45" ry="45" fill="#FDE047" />
+                                    <path d="M 75 80 Q 85 70 90 80" stroke="#0F172A" stroke-width="4" stroke-linecap="round" fill="none"/>
+                                    <path d="M 110 80 Q 115 70 125 80" stroke="#0F172A" stroke-width="4" stroke-linecap="round" fill="none"/>
+                                    <ellipse cx="100" cy="115" rx="18" ry="22" fill="#991B1B" />
+                                    <ellipse cx="100" cy="122" rx="12" ry="10" fill="#F43F5E" />
+                                    <text x="145" y="50" font-family="Fredoka" font-size="20" fill="#0288D1" font-weight="bold">Z</text>
+                                    <text x="160" y="35" font-family="Fredoka" font-size="15" fill="#38BDF8" font-weight="bold">z</text>
+                                </svg>
+                                <span class="font-bold text-sky-900 block text-xs bg-white py-1 px-3 rounded-full border border-sky-200">Refleks Alami Saat Lelah</span>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                title: "2. Contoh Menguap Dalam Kehidupan Sehari-hari",
+                subtitle: "Kapan Saja Kita Sering Menguap?",
+                speechText: "Berikut adalah tiga contoh situasi menguap yang sering terjadi dalam kehidupan sehari-hari anak-anak.",
+                contentHTML: `
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="bg-white p-4 rounded-2xl border-2 border-emerald-300 shadow-md flex flex-col items-center text-center space-y-2 hover:border-emerald-500 transition-all">
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded-full">Situasi 1</span>
+                            <h4 class="font-bold text-emerald-900 text-sm">🏫 Saat Belajar di Kelas</h4>
+                            <div class="w-full h-32 bg-emerald-50 rounded-xl p-2 flex items-center justify-center border border-emerald-200">
+                                <svg viewBox="0 0 160 120" class="w-full h-full">
+                                    <rect x="20" y="85" width="120" height="12" rx="3" fill="#B45309" />
+                                    <path d="M 60 85 L 80 75 L 100 85 Z" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="2" />
+                                    <circle cx="80" cy="45" r="28" fill="#FDE047" />
+                                    <rect x="60" y="10" width="40" height="18" rx="4" fill="#1E293B" />
+                                    <line x1="68" y1="38" x2="76" y2="42" stroke="#0F172A" stroke-width="3" stroke-linecap="round" />
+                                    <line x1="84" y1="42" x2="92" y2="38" stroke="#0F172A" stroke-width="3" stroke-linecap="round" />
+                                    <ellipse cx="80" cy="56" rx="10" ry="12" fill="#7F1D1D" />
+                                </svg>
+                            </div>
+                            <p class="text-xs text-gray-600 leading-tight">Ketika mendengarkan pelajaran guru di sekolah saat stamina mulai berkurang.</p>
+                        </div>
+
+                        <div class="bg-white p-4 rounded-2xl border-2 border-sky-300 shadow-md flex flex-col items-center text-center space-y-2 hover:border-sky-500 transition-all">
+                            <span class="bg-sky-100 text-sky-800 text-xs font-bold px-2 py-0.5 rounded-full">Situasi 2</span>
+                            <h4 class="font-bold text-sky-900 text-sm">🌙 Belajar Malam Hari</h4>
+                            <div class="w-full h-32 bg-sky-950 rounded-xl p-2 flex items-center justify-center border border-sky-800 relative overflow-hidden">
+                                <svg viewBox="0 0 160 120" class="w-full h-full">
+                                    <path d="M 130 20 A 12 12 0 0 1 120 35 A 12 12 0 0 1 130 20" fill="#FACC15" />
+                                    <circle cx="25" cy="20" r="2" fill="#FFF" />
+                                    <circle cx="45" cy="35" r="1.5" fill="#FFF" />
+                                    <path d="M 50 110 Q 80 50 110 110 Z" fill="#38BDF8" />
+                                    <circle cx="80" cy="50" r="22" fill="#FDE047" />
+                                    <path d="M 58 48 C 58 25 102 25 102 48 C 102 65 58 65 58 48 Z" fill="#F1F5F9" />
+                                    <circle cx="72" cy="46" r="3" fill="#0F172A" />
+                                    <circle cx="88" cy="46" r="3" fill="#0F172A" />
+                                    <ellipse cx="80" cy="58" rx="8" ry="10" fill="#7F1D1D" />
+                                </svg>
+                            </div>
+                            <p class="text-xs text-gray-600 leading-tight">Saat membaca buku atau mengaji di rumah menjelang waktu tidur malam.</p>
+                        </div>
+
+                        <div class="bg-white p-4 rounded-2xl border-2 border-amber-300 shadow-md flex flex-col items-center text-center space-y-2 hover:border-amber-500 transition-all">
+                            <span class="bg-amber-100 text-amber-800 text-xs font-bold px-2 py-0.5 rounded-full">Situasi 3</span>
+                            <h4 class="font-bold text-amber-900 text-sm">🌅 Baru Bangun Tidur</h4>
+                            <div class="w-full h-32 bg-amber-50 rounded-xl p-2 flex items-center justify-center border border-amber-200">
+                                <svg viewBox="0 0 160 120" class="w-full h-full">
+                                    <circle cx="25" cy="30" r="14" fill="#F59E0B" />
+                                    <rect x="20" y="80" width="120" height="25" rx="5" fill="#A7F3D0" />
+                                    <rect x="30" y="70" width="40" height="15" rx="4" fill="#FFF" />
+                                    <circle cx="80" cy="45" r="24" fill="#FDE047" />
+                                    <path d="M 50 60 Q 40 30 55 25" stroke="#FDE047" stroke-width="8" stroke-linecap="round" fill="none" />
+                                    <path d="M 110 60 Q 120 30 105 25" stroke="#FDE047" stroke-width="8" stroke-linecap="round" fill="none" />
+                                    <ellipse cx="80" cy="53" rx="9" ry="11" fill="#7F1D1D" />
+                                </svg>
+                            </div>
+                            <p class="text-xs text-gray-600 leading-tight">Saat bangun di pagi hari sebelum bersiap-siap shalat Subuh dan mandi.</p>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                title: "3. Langkah 1 & 2 Adab Menguap",
+                subtitle: "Menahan & Menutup Mulut",
+                speechText: "Langkah pertama: Menahan mulut sebisanya. Langkah kedua: Menutup mulut menggunakan punggung tangan kiri.",
+                contentHTML: `
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-amber-50 p-5 rounded-3xl border-2 border-amber-200 space-y-3 relative overflow-hidden">
+                            <div class="flex items-center gap-3">
+                                <span class="w-10 h-10 bg-amber-400 text-amber-950 rounded-xl font-bold flex items-center justify-center text-xl shadow">1</span>
+                                <h3 class="font-bold text-amber-900 text-lg">Menahan Mulut Sebisanya</h3>
+                            </div>
+                            <p class="text-sm text-gray-700 leading-relaxed">
+                                Ketika dorongan menguap datang, usahakan <b>menahan rapat mulut</b> agar tidak terbuka lebar.
+                            </p>
+                            <div class="w-full h-36 bg-white rounded-2xl p-2 border border-amber-200 flex items-center justify-center">
+                                <svg viewBox="0 0 160 110" class="h-full">
+                                    <circle cx="80" cy="55" r="38" fill="#FDE047" />
+                                    <rect x="50" y="10" width="60" height="22" rx="5" fill="#1E293B" />
+                                    <path d="M 60 48 L 72 48" stroke="#0F172A" stroke-width="4" stroke-linecap="round" />
+                                    <path d="M 88 48 L 100 48" stroke="#0F172A" stroke-width="4" stroke-linecap="round" />
+                                    <line x1="68" y1="68" x2="92" y2="68" stroke="#0F172A" stroke-width="5" stroke-linecap="round" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="bg-emerald-50 p-5 rounded-3xl border-2 border-emerald-200 space-y-3 relative overflow-hidden">
+                            <div class="flex items-center gap-3">
+                                <span class="w-10 h-10 bg-emerald-500 text-white rounded-xl font-bold flex items-center justify-center text-xl shadow">2</span>
+                                <h3 class="font-bold text-emerald-900 text-lg">Punggung Tangan Kiri</h3>
+                            </div>
+                            <p class="text-sm text-gray-700 leading-relaxed">
+                                Jika mulut tetap terbuka, tutuplah dengan <b>punggung tangan kiri</b> (bukan telapak tangan kanan).
+                            </p>
+                            <div class="w-full h-36 bg-white rounded-2xl p-2 border border-emerald-200 flex items-center justify-center">
+                                <svg viewBox="0 0 160 110" class="h-full">
+                                    <circle cx="80" cy="55" r="38" fill="#FDE047" />
+                                    <rect x="50" y="10" width="60" height="22" rx="5" fill="#1E293B" />
+                                    <circle cx="68" cy="45" r="4" fill="#0F172A" />
+                                    <circle cx="92" cy="45" r="4" fill="#0F172A" />
+                                    <path d="M 50 60 Q 80 45 110 60 L 105 85 Q 80 80 55 85 Z" fill="#0288D1" />
+                                    <text x="56" y="75" font-size="10" fill="#FFF" font-weight="bold">Tangan Kiri</text>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                title: "4. Langkah 3 & 4 Adab Menguap",
+                subtitle: "Tidak Bersuara & Membaca Tayibah",
+                speechText: "Langkah ketiga: Jangan mengeluarkan suara keras seperti hoam, karena setan akan tertawa. Langkah keempat: Membaca kalimat tayibah Istighfar.",
+                contentHTML: `
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-rose-50 p-5 rounded-3xl border-2 border-rose-200 space-y-3">
+                            <div class="flex items-center gap-3">
+                                <span class="w-10 h-10 bg-rose-500 text-white rounded-xl font-bold flex items-center justify-center text-xl shadow">3</span>
+                                <h3 class="font-bold text-rose-900 text-lg">Dilarang Bersuara Keras</h3>
+                            </div>
+                            <p class="text-sm text-gray-700">
+                                Dilarang bersuara keras <i>"Aaaahh..."</i> atau <i>"Hooaam..."</i>. Sebab jika bersuara keras, <b>setan akan tertawa senang</b>.
+                            </p>
+                            <div class="w-full h-32 bg-white rounded-2xl p-2 border border-rose-200 flex items-center justify-center">
+                                <svg viewBox="0 0 160 100" class="h-full">
+                                    <circle cx="80" cy="50" r="32" fill="#EF4444" />
+                                    <path d="M 55 28 Q 50 10 62 20 Z" fill="#991B1B" />
+                                    <path d="M 105 28 Q 110 10 98 20 Z" fill="#991B1B" />
+                                    <path d="M 66 42 Q 72 35 78 42" stroke="#FFF" stroke-width="3" fill="none" />
+                                    <path d="M 82 42 Q 88 35 94 42" stroke="#FFF" stroke-width="3" fill="none" />
+                                    <path d="M 66 58 Q 80 75 94 58 Z" fill="#FFF" />
+                                    <text x="120" y="40" font-size="22">🔇</text>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="bg-sky-50 p-5 rounded-3xl border-2 border-sky-200 space-y-3">
+                            <div class="flex items-center gap-3">
+                                <span class="w-10 h-10 bg-sky-500 text-white rounded-xl font-bold flex items-center justify-center text-xl shadow">4</span>
+                                <h3 class="font-bold text-sky-900 text-lg">Membaca Kalimat Tayibah</h3>
+                            </div>
+                            <p class="text-sm text-gray-700">
+                                Selesai menguap, disunnahkan memohon ampunan Allah SWT dengan mengucap:
+                            </p>
+                            <div class="bg-white p-3 rounded-2xl border border-sky-300 text-center space-y-1 shadow-sm">
+                                <span class="text-emerald-900 font-amiri font-bold text-2xl block" dir="rtl">أَسْتَغْفِرُ اللَّهَ الْعَظِيمَ</span>
+                                <span class="text-emerald-800 font-bold text-base block">"Astaghfirullahal 'adzim"</span>
+                                <span class="text-xs text-gray-500 font-semibold">(Aku memohon ampun kepada Allah Yang Maha Agung)</span>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                title: "5. Hikmah Mempraktikkan Adab Menguap",
+                subtitle: "Wujud Cinta Allah, Rasul, Diri & Sesama",
+                speechText: "Hikmah adab menguap: Wujud cinta kepada Allah dan Rasul, cinta diri sendiri, dan kasih sayang kepada sesama manusia.",
+                contentHTML: `
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="bg-amber-100 p-4 rounded-2xl border border-amber-300 text-center space-y-2 shadow-sm">
+                            <div class="text-4xl">❤️</div>
+                            <h4 class="font-bold text-amber-900 text-sm">Cinta Allah & Rasul</h4>
+                            <p class="text-xs text-gray-700 leading-relaxed">Meneladani ajaran dan sunnah suci Nabi Muhammad SAW secara konsisten.</p>
+                        </div>
+
+                        <div class="bg-emerald-100 p-4 rounded-2xl border border-emerald-300 text-center space-y-2 shadow-sm">
+                            <div class="text-4xl">🫁</div>
+                            <h4 class="font-bold text-emerald-900 text-sm">Cinta Diri Sendiri</h4>
+                            <p class="text-xs text-gray-700 leading-relaxed">Mencegah kuman, debu, dan serangga udara masuk ke dalam tenggorokan.</p>
+                        </div>
+
+                        <div class="bg-sky-100 p-4 rounded-2xl border border-sky-300 text-center space-y-2 shadow-sm">
+                            <div class="text-4xl">🤝</div>
+                            <h4 class="font-bold text-sky-900 text-sm">Cinta Sesama Manusia</h4>
+                            <p class="text-xs text-gray-700 leading-relaxed">Menjaga sopan santun sehingga orang di sekitar tidak merasa risih atau terganggu.</p>
+                        </div>
+                    </div>
+                `
+            }
+        ];
+
+        /* -------------------------------------------------------------
+           BANK SOAL EVALUASI (10 SOAL)
+        ------------------------------------------------------------- */
+        const quizQuestions = [
+            {
+                id: 1,
+                type: 'pg',
+                question: "Menurut ajaran Islam, rasa menguap atau kantuk yang berlebihan itu berasal dari godaan...",
+                options: ["Malaikat", "Setan", "Nabi"],
+                correct: 1,
+                explanation: "Rasulullah SAW bersabda bahwa menguap itu berasal dari setan karena tanda malas dan lemas."
+            },
+            {
+                id: 2,
+                type: 'pg',
+                question: "Ketika dorongan menguap mulai terasa di mulut, tindakan pertama yang harus kita lakukan adalah...",
+                options: ["Menahan mulut sebisanya", "Membuka mulut selebar mungkin", "Berteriak keras-keras"],
+                correct: 0,
+                explanation: "Langkah pertama adab menguap menurut sunnah Nabi adalah berusaha menahan rapat mulut sebisanya."
+            },
+            {
+                id: 3,
+                type: 'pg',
+                question: "Bagian tangan yang digunakan untuk menutup mulut ketika menguap adalah...",
+                options: ["Telapak tangan kanan", "Punggung tangan kiri", "Punggung tangan kanan"],
+                correct: 1,
+                explanation: "Saat menguap, kita disunnahkan menutup mulut menggunakan punggung tangan kiri."
+            },
+            {
+                id: 4,
+                type: 'bs',
+                question: "Bersuara keras seperti 'Hooaamm...' saat menguap dapat membuat setan tertawa senang.",
+                options: ["Benar", "Salah"],
+                correct: 0,
+                explanation: "Benar. Rasulullah SAW melarang bersuara saat menguap karena setan akan mentertawakan orang tersebut."
+            },
+            {
+                id: 5,
+                type: 'pgk',
+                question: "Manakah 2 pernyataan berikut yang merupakan tata cara adab menguap yang benar? (Pilih 2 jawaban)",
+                options: [
+                    "Menahan mulut sebisanya agar tidak terbuka",
+                    "Membiarkan mulut terbuka lebar saat di kelas",
+                    "Menutup mulut dengan punggung tangan kiri",
+                    "Mengeluarkan suara teriak 'Aaah!'"
+                ],
+                correct: [0, 2],
+                explanation: "Tata cara yang benar adalah menahan mulut sebisanya dan menutup mulut menggunakan punggung tangan kiri."
+            },
+            {
+                id: 6,
+                type: 'bs',
+                question: "Setelah selesai menguap, disunnahkan membaca kalimat tayibah 'Astaghfirullahal 'adzim'.",
+                options: ["Benar", "Salah"],
+                correct: 0,
+                explanation: "Benar. Mengucapkan Istighfar adalah permohonan ampun kepada Allah dari rasa malas dan godaan setan."
+            },
+            {
+                id: 7,
+                type: 'pg',
+                question: "Mengapa kita dilarang menutup mulut saat menguap menggunakan telapak tangan kanan?",
+                options: [
+                    "Karena tangan kanan digunakan untuk makan dan hal-hal yang baik",
+                    "Karena tangan kanan lebih pendek dari tangan kiri",
+                    "Karena tangan kanan tidak memiliki punggung"
+                ],
+                correct: 0,
+                explanation: "Dalam Islam, tangan kanan diutamakan untuk urusan baik/makan, sedangkan tangan kiri untuk menepis hal kurang baik/mengusap kebersihan."
+            },
+            {
+                id: 8,
+                type: 'match',
+                question: "Jodohkanlah langkah adab menguap berikut dengan keterangannya yang tepat!",
+                pairs: [
+                    { left: "Menutup Mulut", right: "Menggunakan punggung tangan kiri" },
+                    { left: "Suara Saat Menguap", right: "Diam dan tidak bersuara keras" },
+                    { left: "Bacaan Setelah Menguap", right: "Astaghfirullahal 'adzim" }
+                ],
+                explanation: "Menutup mulut dilakukan dengan punggung tangan kiri, suara dilarang keras, dan diakhiri dengan bacaan istighfar."
+            },
+            {
+                id: 9,
+                type: 'pgk',
+                question: "Apa saja hikmah dan manfaat mempraktikkan adab menguap? (Pilih 2 jawaban)",
+                options: [
+                    "Mewujudkan rasa cinta kepada Allah dan Rasul-Nya",
+                    "Membuat setan menjadi sangat gembira",
+                    "Menjaga kebersihan diri agar kuman/serangga tidak masuk",
+                    "Membuat orang lain merasa terganggu"
+                ],
+                correct: [0, 2],
+                explanation: "Mempraktikkan adab menguap adalah wujud cinta Allah dan Rasul serta menjaga kesehatan dan kebersihan diri sendiri."
+            },
+            {
+                id: 10,
+                type: 'pg',
+                question: "Arti dari bacaan istighfar 'Astaghfirullahal 'adzim' yang kita baca setelah menguap adalah...",
+                options: [
+                    "Aku memohon ampun kepada Allah Yang Maha Agung",
+                    "Maha Suci Allah Yang Maha Pemurah",
+                    "Segala puji bagi Allah Tuhan Semesta Alam"
+                ],
+                correct: 0,
+                explanation: "'Astaghfirullahal 'adzim' artinya 'Aku memohon ampun kepada Allah Yang Maha Agung'."
+            }
+        ];
+
+        /* -------------------------------------------------------------
+           AUDIO SYNTHESIZER (WEB AUDIO API)
+        ------------------------------------------------------------- */
+        function playSound(type) {
+            try {
+                if (!audioCtx) {
+                    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                }
+                if (audioCtx.state === 'suspended') {
+                    audioCtx.resume();
+                }
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+
+                if (type === 'pop') {
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(400, audioCtx.currentTime);
+                    osc.frequency.exponentialRampToValueAtTime(800, audioCtx.currentTime + 0.1);
+                    gain.gain.setValueAtTime(0.3, audioCtx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.1);
+                    osc.start();
+                    osc.stop(audioCtx.currentTime + 0.1);
+                } else if (type === 'correct') {
+                    osc.type = 'triangle';
+                    osc.frequency.setValueAtTime(523.25, audioCtx.currentTime);
+                    osc.frequency.setValueAtTime(659.25, audioCtx.currentTime + 0.1);
+                    osc.frequency.setValueAtTime(783.99, audioCtx.currentTime + 0.2);
+                    gain.gain.setValueAtTime(0.2, audioCtx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.4);
+                    osc.start();
+                    osc.stop(audioCtx.currentTime + 0.4);
+                } else if (type === 'wrong') {
+                    osc.type = 'sawtooth';
+                    osc.frequency.setValueAtTime(200, audioCtx.currentTime);
+                    osc.frequency.setValueAtTime(150, audioCtx.currentTime + 0.15);
+                    gain.gain.setValueAtTime(0.2, audioCtx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.3);
+                    osc.start();
+                    osc.stop(audioCtx.currentTime + 0.3);
+                }
+            } catch (e) {
+                console.log("Audio Context ready.");
+            }
+        }
+
+        function playTTSNarrative() {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+                const text = slidesData[currentSlide].speechText;
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'id-ID';
+                utterance.rate = 0.9;
+                utterance.pitch = 1.1;
+                window.speechSynthesis.speak(utterance);
+            }
+        }
+
+        function switchTab(tabId) {
+            playSound('pop');
+            if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.getElementById(`sec-${tabId}`).classList.remove('hidden');
+
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('bg-emerald-500', 'text-white');
+                btn.classList.add('bg-white', 'text-emerald-700');
+            });
+
+            const activeBtn = document.getElementById(`tab-${tabId}`);
+            if (activeBtn) {
+                activeBtn.classList.remove('bg-white', 'text-emerald-700');
+                activeBtn.classList.add('bg-emerald-500', 'text-white');
+            }
+
+            if (tabId === 'materi') {
+                renderSlide();
+            } else if (tabId === 'simulasi') {
+                resetSimulation();
+            }
+        }
+
+        /* -------------------------------------------------------------
+           SLIDE CONTROLLER LOGIC
+        ------------------------------------------------------------- */
+        function renderSlide() {
+            const slide = slidesData[currentSlide];
+            document.getElementById('slide-title').innerText = slide.title;
+            document.getElementById('slide-counter').innerText = `Slide ${currentSlide + 1} / ${slidesData.length}`;
+            document.getElementById('slide-body').innerHTML = slide.contentHTML;
+
+            const dotsContainer = document.getElementById('slide-dots');
+            dotsContainer.innerHTML = '';
+            slidesData.forEach((_, idx) => {
+                const dot = document.createElement('div');
+                dot.className = `w-3 h-3 rounded-full ${idx === currentSlide ? 'bg-emerald-500 w-6' : 'bg-gray-300'} transition-all duration-300 cursor-pointer`;
+                dot.onclick = () => { currentSlide = idx; renderSlide(); };
+                dotsContainer.appendChild(dot);
+            });
+
+            document.getElementById('btn-prev-slide').disabled = (currentSlide === 0);
+            document.getElementById('btn-next-slide').disabled = (currentSlide === slidesData.length - 1);
+        }
+
+        function nextSlide() {
+            if (currentSlide < slidesData.length - 1) {
+                playSound('pop');
+                currentSlide++;
+                renderSlide();
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 0) {
+                playSound('pop');
+                currentSlide--;
+                renderSlide();
+            }
+        }
+
+        /* -------------------------------------------------------------
+           SIMULATION LOGIC
+        ------------------------------------------------------------- */
+        function resetSimulation() {
+            simStage = 1;
+            document.getElementById('sim-feedback').classList.add('hidden');
+            renderSimStage();
+        }
+
+        function renderSimStage() {
+            const progress = document.getElementById('sim-progress');
+            const character = document.getElementById('sim-character');
+            const dialogue = document.getElementById('sim-dialogue');
+            const controls = document.getElementById('sim-controls');
+
+            progress.style.width = `${(simStage / 4) * 100}%`;
+
+            if (simStage === 1) {
+                character.innerHTML = `
+                    <svg viewBox="0 0 200 200" class="w-full h-full drop-shadow-md animate-bounce">
+                        <circle cx="100" cy="100" r="80" fill="#FDE047" />
+                        <circle cx="75" cy="80" r="8" fill="#0F172A" />
+                        <circle cx="125" cy="80" r="8" fill="#0F172A" />
+                        <ellipse cx="100" cy="125" rx="30" ry="35" fill="#991B1B" />
+                        <rect x="70" y="30" width="60" height="25" rx="5" fill="#1E293B" />
+                    </svg>
+                `;
+                dialogue.innerText = '"Aduh... mataku berat sekali, HOAAAMMM!"';
+                controls.innerHTML = `
+                    <button onclick="handleSimAction(true)" class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3 rounded-2xl shadow btn-bounce text-sm">
+                        🤐 Langkah 1: Tahan Mulut Sebisanya!
+                    </button>
+                    <button onclick="handleSimAction(false)" class="w-full bg-rose-400 hover:bg-rose-500 text-white font-bold py-3 rounded-2xl shadow btn-bounce text-sm">
+                        📢 Biarkan Mulut Terbuka Lebar
+                    </button>
+                `;
+            } else if (simStage === 2) {
+                character.innerHTML = `
+                    <svg viewBox="0 0 200 200" class="w-full h-full drop-shadow-md">
+                        <circle cx="100" cy="100" r="80" fill="#FDE047" />
+                        <circle cx="75" cy="80" r="8" fill="#0F172A" />
+                        <circle cx="125" cy="80" r="8" fill="#0F172A" />
+                        <ellipse cx="100" cy="120" rx="15" ry="10" fill="#991B1B" />
+                        <rect x="70" y="30" width="60" height="25" rx="5" fill="#1E293B" />
+                    </svg>
+                `;
+                dialogue.innerText = '"Bagus! Sekarang dengan apa kita menutup mulut?"';
+                controls.innerHTML = `
+                    <button onclick="handleSimAction(true)" class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3 rounded-2xl shadow btn-bounce text-sm">
+                        ✋ Langkah 2: Tutup dengan Punggung Tangan Kiri
+                    </button>
+                    <button onclick="handleSimAction(false)" class="w-full bg-rose-400 hover:bg-rose-500 text-white font-bold py-3 rounded-2xl shadow btn-bounce text-sm">
+                        🤚 Tutup dengan Telapak Tangan Kanan
+                    </button>
+                `;
+            } else if (simStage === 3) {
+                character.innerHTML = `
+                    <svg viewBox="0 0 200 200" class="w-full h-full drop-shadow-md">
+                        <circle cx="100" cy="100" r="80" fill="#FDE047" />
+                        <path d="M 60 110 Q 100 90 140 110 L 130 140 L 70 140 Z" fill="#38BDF8" opacity="0.9" />
+                        <circle cx="75" cy="75" r="7" fill="#0F172A" />
+                        <circle cx="125" cy="75" r="7" fill="#0F172A" />
+                        <rect x="70" y="30" width="60" height="25" rx="5" fill="#1E293B" />
+                    </svg>
+                `;
+                dialogue.innerText = '"Ingat, bolehkah bersuara keras HAAAH... saat menguap?"';
+                controls.innerHTML = `
+                    <button onclick="handleSimAction(true)" class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3 rounded-2xl shadow btn-bounce text-sm">
+                        🤫 Langkah 3: Diam / Tidak Bersuara Keras
+                    </button>
+                    <button onclick="handleSimAction(false)" class="w-full bg-rose-400 hover:bg-rose-500 text-white font-bold py-3 rounded-2xl shadow btn-bounce text-sm">
+                        🔊 Berteriak "Aaaaah!" Supaya Lega
+                    </button>
+                `;
+            } else if (simStage === 4) {
+                character.innerHTML = `
+                    <svg viewBox="0 0 200 200" class="w-full h-full drop-shadow-md">
+                        <circle cx="100" cy="100" r="80" fill="#FDE047" />
+                        <circle cx="75" cy="85" r="7" fill="#0F172A" />
+                        <circle cx="125" cy="85" r="7" fill="#0F172A" />
+                        <path d="M 80 120 Q 100 135 120 120" fill="none" stroke="#0F172A" stroke-width="4" stroke-linecap="round" />
+                        <rect x="70" y="30" width="60" height="25" rx="5" fill="#1E293B" />
+                    </svg>
+                `;
+                dialogue.innerText = '"Langkah terakhir, baca kalimat tayibah apa setelah selesai?"';
+                controls.innerHTML = `
+                    <button onclick="handleSimAction(true)" class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3 rounded-2xl shadow btn-bounce text-sm">
+                        🤲 Langkah 4: Membaca "Astaghfirullahal 'adzim"
+                    </button>
+                    <button onclick="handleSimAction(false)" class="w-full bg-rose-400 hover:bg-rose-500 text-white font-bold py-3 rounded-2xl shadow btn-bounce text-sm">
+                        😴 Langsung Tidur Tanpa Baca Apa-apa
+                    </button>
+                `;
+            }
+        }
+
+        function handleSimAction(isCorrect) {
+            if (isCorrect) {
+                playSound('correct');
+                if (simStage < 4) {
+                    simStage++;
+                    renderSimStage();
+                } else {
+                    document.getElementById('sim-controls').innerHTML = '';
+                    document.getElementById('sim-dialogue').innerText = '"Alhamdulillah! Terima kasih sudah mengajariku adab menguap!"';
+                    document.getElementById('sim-feedback').classList.remove('hidden');
+                }
+            } else {
+                playSound('wrong');
+                alert("Opps! Pilihan kurang tepat. Coba ingat kembali petunjuk sunnah Rasulullah SAW ya!");
+            }
+        }
+
+        /* -------------------------------------------------------------
+           EVALUATION QUIZ ENGINE
+        ------------------------------------------------------------- */
+        function startQuiz() {
+            const nameInput = document.getElementById('student-name').value.trim();
+            const classInput = document.getElementById('student-class').value;
+
+            if (!nameInput) {
+                alert("Silakan masukkan nama lengkapmu terlebih dahulu!");
+                return;
+            }
+
+            studentInfo.name = nameInput;
+            studentInfo.class = classInput;
+
+            document.getElementById('quiz-intro').classList.add('hidden');
+            document.getElementById('quiz-container').classList.remove('hidden');
+            document.getElementById('quiz-user-info').innerText = `Siswa: ${studentInfo.name} (${studentInfo.class})`;
+
+            currentQuizIndex = 0;
+            userAnswers = [];
+            renderQuestion();
+        }
+
+        function renderQuestion() {
+            const q = quizQuestions[currentQuizIndex];
+            document.getElementById('quiz-question-number').innerText = `Soal ${currentQuizIndex + 1} dari ${quizQuestions.length}`;
+            
+            const typeText = {
+                'pg': 'Pilihan Ganda',
+                'pgk': 'Pilihan Ganda Kompleks',
+                'bs': 'Benar / Salah',
+                'match': 'Menjodohkan'
+            };
+            document.getElementById('quiz-type-badge').innerText = typeText[q.type];
+
+            const body = document.getElementById('quiz-question-body');
+            body.innerHTML = `<p class="font-bold text-gray-800 text-lg">${q.question}</p>`;
+
+            document.getElementById('quiz-explanation-box').classList.add('hidden');
+            document.getElementById('btn-check-ans').classList.remove('hidden');
+            document.getElementById('btn-next-q').classList.add('hidden');
+
+            if (q.type === 'pg' || q.type === 'bs') {
+                const optsDiv = document.createElement('div');
+                optsDiv.className = "space-y-2 pt-2";
+                q.options.forEach((opt, idx) => {
+                    optsDiv.innerHTML += `
+                        <label class="flex items-center gap-3 p-4 rounded-2xl border-2 border-gray-200 hover:border-emerald-400 cursor-pointer transition-all bg-gray-50">
+                            <input type="radio" name="quiz-opt" value="${idx}" class="w-5 h-5 text-emerald-600">
+                            <span class="font-semibold text-gray-700">${opt}</span>
+                        </label>
+                    `;
+                });
+                body.appendChild(optsDiv);
+            } else if (q.type === 'pgk') {
+                const optsDiv = document.createElement('div');
+                optsDiv.className = "space-y-2 pt-2";
+                q.options.forEach((opt, idx) => {
+                    optsDiv.innerHTML += `
+                        <label class="flex items-center gap-3 p-4 rounded-2xl border-2 border-gray-200 hover:border-emerald-400 cursor-pointer transition-all bg-gray-50">
+                            <input type="checkbox" name="quiz-opt-k" value="${idx}" class="w-5 h-5 text-emerald-600 rounded">
+                            <span class="font-semibold text-gray-700">${opt}</span>
+                        </label>
+                    `;
+                });
+                body.appendChild(optsDiv);
+            } else if (q.type === 'match') {
+                const matchDiv = document.createElement('div');
+                matchDiv.className = "space-y-3 pt-2";
+                q.pairs.forEach((pair, idx) => {
+                    matchDiv.innerHTML += `
+                        <div class="flex flex-col md:flex-row md:items-center justify-between p-3 rounded-2xl border-2 border-amber-200 bg-amber-50 gap-2">
+                            <span class="font-bold text-amber-900 text-sm">📍 ${pair.left}</span>
+                            <span class="text-xs text-gray-500 font-bold">dijodohkan dengan ➔</span>
+                            <select id="match-sel-${idx}" class="px-3 py-2 rounded-xl border border-amber-300 font-bold text-sm text-gray-800 focus:outline-none">
+                                <option value="">-- Pilih Pasangan --</option>
+                                ${q.pairs.map((p) => `<option value="${p.right}">${p.right}</option>`).join('')}
+                            </select>
+                        </div>
+                    `;
+                });
+                body.appendChild(matchDiv);
+            }
+        }
+
+        function checkAnswer() {
+            const q = quizQuestions[currentQuizIndex];
+            let isCorrect = false;
+
+            if (q.type === 'pg' || q.type === 'bs') {
+                const selected = document.querySelector('input[name="quiz-opt"]:checked');
+                if (!selected) {
+                    alert("Pilih salah satu jawaban terlebih dahulu!");
+                    return;
+                }
+                const userAnsVal = parseInt(selected.value);
+                isCorrect = (userAnsVal === q.correct);
+            } else if (q.type === 'pgk') {
+                const selected = Array.from(document.querySelectorAll('input[name="quiz-opt-k"]:checked')).map(cb => parseInt(cb.value));
+                if (selected.length === 0) {
+                    alert("Pilih minimal satu pilihan!");
+                    return;
+                }
+                isCorrect = JSON.stringify(selected.sort()) === JSON.stringify(q.correct.sort());
+            } else if (q.type === 'match') {
+                const userPairs = [];
+                let allSelected = true;
+                q.pairs.forEach((pair, idx) => {
+                    const sel = document.getElementById(`match-sel-${idx}`).value;
+                    if (!sel) allSelected = false;
+                    userPairs.push({ left: pair.left, userRight: sel, correctRight: pair.right });
+                });
+                if (!allSelected) {
+                    alert("Lengkapi semua pasangan pilihan!");
+                    return;
+                }
+                isCorrect = userPairs.every(p => p.userRight === p.correctRight);
+            }
+
+            userAnswers.push({
+                questionId: q.id,
+                questionText: q.question,
+                isCorrect: isCorrect,
+                explanation: q.explanation
+            });
+
+            const expBox = document.getElementById('quiz-explanation-box');
+            expBox.classList.remove('hidden');
+
+            if (isCorrect) {
+                playSound('correct');
+                expBox.className = "p-4 rounded-2xl border-2 bg-emerald-100 border-emerald-400 text-emerald-900 text-sm leading-relaxed";
+                expBox.innerHTML = `<b>🎉 Jawaban Benar!</b><br>${q.explanation}`;
+            } else {
+                playSound('wrong');
+                expBox.className = "p-4 rounded-2xl border-2 bg-rose-100 border-rose-400 text-rose-900 text-sm leading-relaxed";
+                expBox.innerHTML = `<b>❌ Jawaban Kurang Tepat!</b><br>${q.explanation}`;
+            }
+
+            document.getElementById('btn-check-ans').classList.add('hidden');
+            document.getElementById('btn-next-q').classList.remove('hidden');
+        }
+
+        function nextQuestion() {
+            playSound('pop');
+            if (currentQuizIndex < quizQuestions.length - 1) {
+                currentQuizIndex++;
+                renderQuestion();
+            } else {
+                showQuizResult();
+            }
+        }
+
+        function showQuizResult() {
+            document.getElementById('quiz-container').classList.add('hidden');
+            document.getElementById('quiz-result').classList.remove('hidden');
+
+            document.getElementById('result-student-name').innerText = `Nama: ${studentInfo.name} | Kelas: ${studentInfo.class}`;
+
+            const correctCount = userAnswers.filter(a => a.isCorrect).length;
+            const score = Math.round((correctCount / quizQuestions.length) * 100);
+
+            document.getElementById('final-score').innerText = score;
+
+            const verdict = document.getElementById('final-verdict');
+            if (score >= 80) {
+                verdict.innerText = "Masya Allah! Luar biasa, pemahamanmu sangat baik! 🌟";
+            } else if (score >= 60) {
+                verdict.innerText = "Bagus! Kamu sudah memahami sebagian besar adab menguap. 👍";
+            } else {
+                verdict.innerText = "Yuk, pelajari kembali slide materi dan coba kuis lagi ya! 💪";
+            }
+
+            const list = document.getElementById('discussion-list');
+            list.innerHTML = '';
+            userAnswers.forEach((ans, idx) => {
+                list.innerHTML += `
+                    <div class="p-3 rounded-xl border ${ans.isCorrect ? 'border-emerald-300 bg-emerald-50' : 'border-rose-300 bg-rose-50'} text-xs space-y-1">
+                        <div class="font-bold ${ans.isCorrect ? 'text-emerald-800' : 'text-rose-800'} flex items-center justify-between">
+                            <span>Soal ${idx + 1}: ${ans.questionText}</span>
+                            <span>${ans.isCorrect ? '✔️ Benar' : '❌ Salah'}</span>
+                        </div>
+                        <p class="text-gray-700"><b>Pembahasan:</b> ${ans.explanation}</p>
+                    </div>
+                `;
+            });
+
+            // Kirim Hasil ke Database Google Apps Script / Google Sheets
+            saveQuizResultToDatabase(score, correctCount);
+        }
+
+        async function saveQuizResultToDatabase(score, correctCount) {
+            const syncStatus = document.getElementById('db-sync-status');
+            
+            if (!GAS_WEB_APP_URL || GAS_WEB_APP_URL.includes("MASUKKAN_URL_WEB_APP")) {
+                syncStatus.className = "text-xs font-bold bg-amber-100 p-3 rounded-xl border border-amber-300 text-amber-800 inline-block mx-auto";
+                syncStatus.innerHTML = "ℹ️ <b>Mode Luring:</b> Hasil kuis tersimpan di layar. (URL Web App Apps Script belum dikonfigurasi).";
+                return;
+            }
+
+            syncStatus.className = "text-xs font-bold bg-amber-50 p-3 rounded-xl border border-amber-200 text-amber-800 inline-block mx-auto animate-pulse";
+            syncStatus.innerHTML = "⏳ <b>Menyimpan ke Database Guru...</b> Mohon tunggu sebentar.";
+
+            const payload = {
+                studentName: studentInfo.name,
+                studentClass: studentInfo.class,
+                score: score,
+                correctCount: correctCount,
+                wrongCount: quizQuestions.length - correctCount,
+                totalQuestions: quizQuestions.length,
+                timestamp: new Date().toLocaleString('id-ID'),
+                answers: userAnswers.map((ans, idx) => ({
+                    no: idx + 1,
+                    question: ans.questionText,
+                    status: ans.isCorrect ? "BENAR" : "SALAH"
+                })),
+                questionsBank: quizQuestions.map(q => ({
+                    id: q.id,
+                    type: q.type,
+                    question: q.question,
+                    options: q.options ? q.options.join(" | ") : (q.pairs ? q.pairs.map(p => `${p.left} -> ${p.right}`).join(" | ") : ""),
+                    correct: Array.isArray(q.correct) ? q.correct.join(", ") : (q.correct !== undefined ? q.correct : "Menjodohkan"),
+                    explanation: q.explanation
+                }))
+            };
+
+            try {
+                // Mengirim HTTP POST tanpa terhalang Masalah CORS menggunakan no-cors mode
+                await fetch(GAS_WEB_APP_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: {
+                        'Content-Type': 'text/plain;charset=utf-8',
+                    },
+                    body: JSON.stringify(payload)
+                });
+
+                syncStatus.className = "text-xs font-bold bg-emerald-100 p-3 rounded-xl border border-emerald-400 text-emerald-900 inline-block mx-auto";
+                syncStatus.innerHTML = "✅ <b>Tersimpan!</b> Hasil kuis berhasil dikirimkan ke Google Sheets Database Guru.";
+            } catch (error) {
+                console.error("Gagal mengirim data ke Google Sheets:", error);
+                syncStatus.className = "text-xs font-bold bg-rose-100 p-3 rounded-xl border border-rose-300 text-rose-800 inline-block mx-auto";
+                syncStatus.innerHTML = "⚠️ <b>Gagal Menyimpan:</b> Koneksi jaringan terganggu. Hasil kuis tetap dapat dilihat di layar ini.";
+            }
+        }
+
+        function restartQuiz() {
+            document.getElementById('quiz-result').classList.add('hidden');
+            document.getElementById('quiz-intro').classList.remove('hidden');
+        }
+
+        // Inisialisasi Aplikasi
+        window.onload = function() {
+            renderSlide();
+        };
+    </script>
+</body>
+</html>
